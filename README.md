@@ -1,2 +1,2 @@
 # codeworks
-All about what I dirtied my hands on
+My hands on for front end development
