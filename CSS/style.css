@@ -8,7 +8,6 @@ body{
 }
 
 .container{
-    border: 2px solid red;
     margin:0 auto;
     width:90%;
     background:hsl(0, 0%, 100%);
