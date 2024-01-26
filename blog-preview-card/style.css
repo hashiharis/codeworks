@@ -1,0 +1,148 @@
+:root{
+    --primary-clr: hsl(47, 88%, 63%);
+    --secondary-clr-1:hsl(0, 0%, 100%);
+    --secondary-clr-2:hsl(0, 0%, 50%);
+    --secondary-clr-3: hsl(0, 0%, 7%);
+
+    --ff-name: 'Figtree', sans-serif;
+    --fw-semibold:600;
+    --fw-xbold:800;
+    --fs-h:1.5rem;
+    --fs-desc:0.9rem;
+    --fs-btn:1rem;
+    --fs-inst-name:1.2rem;
+
+    --br:20px;
+    --br-img:12px;
+    --br-btn:5px;
+    --brline:1px solid  hsl(0, 0%, 7%);
+    --boxshdw: 8px 10px;
+
+    --mrg-tp: 7em;
+    --mrg:0.8em;
+    --padding-body: 1em;
+    --padding-container:1.5em;
+    --padding-block: 0.5em;
+
+  
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    /* margin:0 auto; */
+    background: var(--primary-clr);
+    /* padding-inline: var(--padding-body); */
+    font-family: var(--ff-name);
+
+    /* Instead of using margin 0 auto and margin top using this below section code makes it more efficient */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+h1{
+font-weight: var(--fw-xbold);
+font-size: var(--fs-h);
+cursor: pointer;
+}
+
+h1:hover{
+    color:var(--primary-clr);
+}
+
+.coursecard__container{
+    background: var(--secondary-clr-1);
+    display:flex;
+    flex-direction: column;
+    max-width:350px; /* Helps avoiding the container size to grow for larger screens */
+    font-family: var(--ff-name);
+    border:var(--brline);
+    border-radius: var(--br);
+    align-items: center;
+    /* margin-top: var(--mrg-tp); */
+    box-shadow: var(--boxshdw);
+    padding-inline: var(--padding-container);
+    color:var(--secondary-clr-3);
+}
+
+.course__heroimage,img{
+    margin-block: var(--mrg);
+    width:100%;
+    border-radius: var(--br-img);
+   }
+ 
+
+
+.course__type{
+    background: var(--primary-clr);
+    width:fit-content;
+    padding-inline: var(--padding-body);
+    padding-block: var(--padding-block);
+    color:var(--secondary-clr-3);
+    font-weight: var(--fw-xbold);
+    font-size: var(--fs-btn);
+    border-radius: var(--br-btn);
+    text-align: center; 
+}
+
+.course__date{
+    margin-top: 1em;
+}
+
+.course__description{
+    color:var(--secondary-clr-2);
+   line-height: 1.5;
+   font-size: var(--fs-desc); 
+   margin-top:-1em;  
+}
+
+.course__instructor__details{
+    display: flex;
+    margin-right:auto;
+    width: 20%;
+}
+
+.course__instructor__name{ 
+font-weight: var(--fw-xbold);
+margin-block: 1.5em;
+padding-left: 0.5em;
+font-size: var(--fs-inst-name);
+white-space: nowrap;
+}
+
+.attribution{
+    margin-top:1em;
+    text-align: center;
+}
+
+/* For Tablet */
+@media (min-width:768px) or (max-width:768px){
+    .coursecard__container{
+      margin:0 auto;
+      margin-top:var(--mrg-tp);
+    }
+  
+    .card__header{
+      margin-right:auto ;
+    }
+  
+  }
+  
+ /* For Desktop */ 
+@media (min-width:1440px){
+  .coursecard__container{
+    margin:0 auto;
+    margin-top: var(--mrg-tp);
+  }
+
+  .card__header{
+    margin-right:auto ;
+  }
+
+}
+
