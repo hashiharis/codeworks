@@ -1,0 +1,63 @@
+:root{
+
+
+--Cyan : hsl(179, 62%, 43%);
+--lightcyan:hsla(179, 62%, 43%,0.8);
+--BrightYellow: hsl(71, 73%, 54%);
+
+--LightGray: hsl(204, 43%, 93%);
+--GrayishBlue: hsl(218, 22%, 67%);
+--white: hsl(0, 0%, 100%);
+
+--ff-name: 'Karla', sans-serif;
+
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--LightGray);
+    font-family: var(--ff-name);
+  
+}
+h1{
+    color:var(--Cyan);
+}
+
+.container{
+    display: grid;
+}
+.row{
+    /* border: 2px solid red; */
+    padding-inline: 1em;
+}
+
+.join-us{
+    background: var(--white);
+    color:var(--GrayishBlue);
+}
+
+.join-us h2{
+    color:var(--BrightYellow);
+}
+
+.subscription {
+    background: var(--Cyan);
+    color:var(--white);
+}
+
+.signup{
+    background: var(--BrightYellow);
+    
+}
+.signup a{
+    text-decoration: none;
+    color: var(--white);
+}
+.about-us{
+    background: var(--lightcyan);
+    color:var(--white);
+}
+
