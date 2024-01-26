@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [SourceCode](https://glittery-moonbeam-578431.netlify.app/)
-- Live Site URL: [Challenge_Blogcard](https://hashiharis.github.io/challenge_blogcard/)
+- Solution URL: [SourceCode](https://github.com/hashiharis/codeworks/tree/main/blog-preview-card)
+- Live Site URL: [Challenge_Blogcard](https://glittery-moonbeam-578431.netlify.app/)
 
 ## My process
 
