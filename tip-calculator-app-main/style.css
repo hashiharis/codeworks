@@ -1,0 +1,210 @@
+:root{
+    --strongcyan: hsl(172, 67%, 45%);
+   --verydarkcyan:hsl(183, 100%, 15%);
+   --darkgrayishcyan: hsl(186, 14%, 43%);
+   --grayishcyan: hsl(184, 14%, 56%);
+   --lightgrayishcyan: hsl(185, 41%, 84%);
+ --verylightgrayishcyan: hsl(189, 41%, 97%);
+ --white: hsl(0, 0%, 100%);
+
+ --ff-spacemonobold:"Space Mono", monospace;
+ --fw-bold:700;
+ --font-style:normal;
+ --fontsize-form-input:1.5rem;
+
+ --br-backgnd:24px;
+ --br-form:3px;
+ --br-tip-btn:4px;
+ --br-tip-calc:10px;
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+   
+}
+
+body{
+    margin:0 auto;
+    padding:0;
+    font-family: var(--ff-spacemonobold);
+    font-weight: var(--fw-bold);
+    font-style: var(--font-style);
+    background-color: var(--lightgrayishcyan);
+    border-radius: var(--br-backgnd);
+    color: var(--grayishcyan);
+}
+
+.header{
+    max-width: 100%;
+  
+}
+.logo{
+    display: block;
+    margin: auto; 
+    padding-block: 2em;
+}
+
+.wrapper{
+    background-color: var(--white);
+    border-radius: var(--br-backgnd);
+    padding-block: 1em;
+    padding-inline: 2.5em;
+    width:min(100%,800px);
+}
+
+#bill-textBox,#people-textBox{
+    border: none;
+    background-color: var(--verylightgrayishcyan);
+    /* padding-block:0.5em;
+    padding-inline:2.5em; */
+    font-size:var(--fontsize-form-input);
+    border-radius: var(--br-form);
+    color:var(--verydarkcyan);
+    font-family: var(--ff-spacemonobold);
+    font-weight: var(--fw-bold);
+    
+}
+
+#bill-textBox
+{ background-image: url('./images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: 1em;
+}
+
+#bill-textBox:focus{
+    outline-color: var(--strongcyan);
+}
+
+#people-textBox
+{ 
+    background-image: url('./images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: 1em;
+}
+
+#people-textBox:focus{
+    outline-color: var(--strongcyan);
+}
+
+.tip-btn-input{
+    display: grid;
+    gap:1em;  
+    grid-template-columns: repeat(2,0.5fr); 
+    grid-template-rows: repeat(3,0.5fr);
+   
+}
+
+
+
+.tip-btn-input button, #custom-tip{
+    border:none;
+    padding-block:0.5em;
+    border-radius: var(--br-tip-btn);
+    background-color: var(--verydarkcyan); 
+    color: var(--white);
+}
+#custom-tip{
+    background-color: var(--verylightgrayishcyan);
+    color: var(--darkgrayishcyan);
+    font-family: var(--ff-spacemonobold);
+    font-weight: var(--fw-bold);
+}
+#custom-tip:focus{
+    outline-color: var(--strongcyan);
+}
+.tip-btn-input button:hover{
+    background-color: var(--strongcyan);
+}
+
+.tip-calculator{
+ background-color: var(--verydarkcyan);
+ padding-inline: 1.5em;
+ padding-block: 0.2em;
+ padding-bottom: 0.8em;
+ margin-top: 1em;
+ border-radius: var(--br-tip-calc);
+}
+.tip-calculator-display
+{
+ display: grid;
+ grid-template-columns: repeat(2,0.4fr);
+ grid-gap:1em;
+ justify-content: space-between;
+}
+
+.tip-header{
+    color:var(--white);
+}
+.person{
+    color: var(--grayishcyan);
+}
+.display{
+    color:var(--strongcyan);
+}
+.reset-btn{
+    background-color: var(--strongcyan);
+    border: none;
+    padding-block: 0.5em;
+    width:100%;
+    text-transform: uppercase;
+    border-radius: var(--br-tip-btn);
+}
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width:700px){
+    .wrapper{
+        margin:0 auto;
+        width:80%;
+    }
+
+    .reset-btn{
+       width:100%;
+    }
+}
+
+@media (min-width:1440px){
+    .grid-container
+    {
+        display: grid;
+        grid-template-columns: 0.2fr 1fr;
+        gap:1em;
+        width:50vw;
+    }
+    .grid-item-two:nth-child(2){
+        grid-area: 2/1/2/1;
+    }
+    
+    .grid-item-three:nth-child(3){
+        grid-area: 3/1/3/1;
+    }
+
+    .grid-item-four:nth-child(4){
+        grid-area:1/2/4/3;
+    }
+
+    .tip-btn-input{
+        grid-template-columns: repeat(3,0.5fr); 
+        grid-template-rows: repeat(2,0.5fr);
+    }
+
+    .reset-btn{
+        margin-top: 10em;
+    }
+
+}
+
+@media (min-width:2560px) {
+    .grid-container{
+        grid-template-columns: 0.2fr 1fr;
+        width:28vw;
+    }
+
+}
+
