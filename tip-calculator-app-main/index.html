@@ -29,23 +29,23 @@
         <div class="bill-input">
           <p class="text-header">Bill</p>
           <input type="number" id="bill-textBox" dir="rtl" />
+          <p id="billFeedback"></p>
         </div>
       </section>
       <section class="tip-box grid-item-two">
         <div class="tip-input">
           <p class="text-header">Select Tip %</p>
           <div class="tip-btn-input">
-            <button type="button" id="five">5%</button>
-            <button type="button" id="ten">10%</button>
-            <button type="button" id="fifteen">15%</button>
-            <button type="button" id="twentyfive">25%</button>
-            <button type="button" id="fifty">50%</button>
+            <button type="button" class="tip-btn" id="five">5%</button>
+            <button type="button" class="tip-btn" id="ten">10%</button>
+            <button type="button" class="tip-btn" id="fifteen">15%</button>
+            <button type="button" class="tip-btn" id="twentyfive">25%</button>
+            <button type="button" class="tip-btn" id="fifty">50%</button>
             <input
               type="text"
-              value="Custom"
               placeholder="Custom"
               id="custom-tip"
-              size="4"
+              class="customTip"
               dir="rtl"
             />
           </div>
@@ -55,6 +55,7 @@
         <div class="peoplecount-input">
           <p class="text-header">Number of People</p>
           <input type="number" id="people-textBox" dir="rtl" />
+          <p id="peopleFeedback"></p>
         </div>
       </section>
       <section class="tip-calculator grid-item-four">
@@ -74,8 +75,10 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Hashi Haris</a>.
       </div>
     </footer>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

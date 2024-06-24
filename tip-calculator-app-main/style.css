@@ -93,6 +93,7 @@ body{
     gap:1em;  
     grid-template-columns: repeat(2,0.5fr); 
     grid-template-rows: repeat(3,0.5fr);
+    
    
 }
 
@@ -116,6 +117,7 @@ body{
 }
 .tip-btn-input button:hover{
     background-color: var(--strongcyan);
+    cursor:pointer;
 }
 
 .tip-calculator{
@@ -149,6 +151,13 @@ body{
     padding-block: 0.5em;
     width:100%;
     text-transform: uppercase;
+    border-radius: var(--br-tip-btn);
+}
+
+ #custom-tip.error{
+    outline-color: red ;
+    border:solid 2px red;
+    color:red;
     border-radius: var(--br-tip-btn);
 }
 
@@ -198,6 +207,7 @@ body{
         margin-top: 10em;
     }
 
+ 
 }
 
 @media (min-width:2560px) {
