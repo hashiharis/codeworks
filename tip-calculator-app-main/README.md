@@ -42,7 +42,7 @@ Users should be able to:
 
 ### What I learned
 
-Through this project, I learned to apply Prototypal inheritance, I tried to design multiple classes using constructor. The tip calculator app is designed in a way, to learn the Javascript OOP's and inheritance concepts. Apart from vannilla JS, tried to apply ES6+ syntax as much as possible. 
+Through this project, I learned to apply Prototypal inheritance, I tried to design multiple classes using constructor. The tip calculator app is designed in a way, to learn the Javascript OOP's and inheritance concepts. Apart from vanilla JS, tried to apply ES6+ syntax as much as possible. 
 
 
 ### Useful resources
