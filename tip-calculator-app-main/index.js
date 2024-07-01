@@ -1,39 +1,41 @@
-import { TipCalculate, Validate } from "./script.js";
+export class Bill{
+    constructor(userBill,userTip,noOfPeople){
+        this.userBill=userBill
+        this.userTip=userTip
+        this.noOfPeople=noOfPeople
+    }
+   
+}
 
-const bill = document.getElementById("bill-textBox");
-const userTip = document.querySelectorAll(".tip-btn");
-const customTip = document.getElementById("custom-tip");
-const noOfPeople = document.getElementById("people-textBox");
+Bill.prototype.constructor=Bill;
 
-bill.onblur = (event) => {
-  let userBill = event.target.value;
-  // console.log(userBill);
-  user.billValidate(userBill);
-};
+export class Validate extends Bill{
+    constructor(userBill,userTip,noOfPeople){
+        super(userBill,userTip,noOfPeople);   
+    }
 
-userTip.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    let tip = event.target.innerText;
-    // console.log(tip);
-    user.tipValidate(tip);
-  });
-});
+    billAndPeopleValidate(){
+        let validationBill=document.getElementById("billErrorMessage");
+        let validationTip=document.getElementById("peopleErrorMessage");
+       if(isNaN(this.userBill)||isNaN(this.noOfPeople)){
+          validationBill.innerText="The bill field must not be empty"
+          validationBill.style.color="red";
+          validationTip.innerText="The no of people field must not be empty"
+          validationTip.style.color="red";
+       }
 
-customTip.onkeyup = (event) => {
-  let cTip = event.target.value;
-  const { key } = event;
-  user.cTipValidate(cTip, key);
-};
 
-noOfPeople.onblur = (event) => {
-  let nPeople = event.target.value;
-  // console.log(nPeople);
-  user.peopleValidate(nPeople);
-};
+    }
 
-const user = new Validate(bill, userTip, customTip, noOfPeople);
-console.log(user);
+    tipValidate(){
+        let tipValidate=document.getElementById("tipValidate")
+    }
+    
 
-const amount = new TipCalculate(bill, userTip, customTip, noOfPeople);
-amount.calculateTip();
-amount.displayShare();
+}
+
+export class TipCalculate extends Bill{
+    constructor(userBill,userTip,noOfPeople){
+        super(userBill,userTip,noOfPeople);
+    }
+}
