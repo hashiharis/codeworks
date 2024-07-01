@@ -87,7 +87,7 @@ export class Validate extends Bill {
   }
 
   numValidate(billVal, message) {
-    if (Math.sign(billVal) === -1) {
+    if (Math.sign(billVal) === -billVal) {
       message.innerText = "Please enter a valid input";
       message.style.color = "red";
     } else {
@@ -142,6 +142,11 @@ export class TipCalculate extends Bill {
   }
 
   displayShare = (tipAmtPerPerson = 0.0, totalAmtPerPerson = 0.0) => {
+
+    if(isNaN(tipAmtPerPerson)&&isNaN(totalAmtPerPerson)){
+      tipAmtPerPerson = 0.0;
+      totalAmtPerPerson = 0.0;
+    }
     let tipAmount = document.getElementById("tip-amount");
     let tipTotal = document.getElementById("tip-total");
     tipAmount.innerHTML = "$" + tipAmtPerPerson;

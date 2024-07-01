@@ -65,7 +65,7 @@ body{
     
 }
 
-#bill-textBox
+#bill-textBox,#people-textBox
 { background-image: url('./images/icon-dollar.svg');
     background-repeat: no-repeat;
     background-position: left center;
@@ -79,9 +79,6 @@ body{
 #people-textBox
 { 
     background-image: url('./images/icon-person.svg');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 1em;
 }
 
 #people-textBox:focus{
@@ -152,6 +149,7 @@ body{
     width:100%;
     text-transform: uppercase;
     border-radius: var(--br-tip-btn);
+    cursor: pointer;
 }
 
  #custom-tip.error{
@@ -199,9 +197,12 @@ body{
     }
 
     .tip-btn-input{
-        grid-template-columns: repeat(3,0.5fr); 
+        grid-template-columns: repeat(3,25%); 
         grid-template-rows: repeat(2,0.5fr);
     }
+    /* #fifteen{
+        grid-area:1/2/2/4;
+    } */
 
     .reset-btn{
         margin-top: 10em;
