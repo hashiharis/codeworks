@@ -56,22 +56,25 @@ export class Validate extends Bill {
   cTipValidate(val, code) {
     let customTipValue = this.numToPerc(val);
     // Validating the custom field for only numbers and adding necessary error validation styles
-    let pattern = new RegExp(/([\d])+/);
-    if (pattern.test(customTipValue)) {
-      this.customTip.classList.remove("error");
-    } else if (code === "Backspace") {
-      this.customTip.classList.remove("error");
-    } else {
-      this.customTip.classList.add("error");
+    if(val!== code){
+      let pattern = new RegExp(/([\d])+/);
+      if (pattern.test(customTipValue)) {
+       this.customTip.classList.remove("error");
+      } else if (code === "Backspace") {
+         this.customTip.classList.remove("error");
+      } else {
+       this.customTip.classList.add("error");
+      }
+      // Fetching user custom tip option and passing it for tip calculation
+      this.tipCalculator.customTip = customTipValue;
+      this.tipCalculator.calculateTip(
+        this.tipCalculator.userBill,
+        this.tipCalculator.userTip,
+        customTipValue,
+        this.tipCalculator.noOfPeople
+      );
     }
-    // Fetching user custom tip option and passing it for tip calculation
-    this.tipCalculator.customTip = customTipValue;
-    this.tipCalculator.calculateTip(
-      this.tipCalculator.userBill,
-      this.tipCalculator.userTip,
-      customTipValue,
-      this.tipCalculator.noOfPeople
-    );
+   
   }
 
   // To validate number of people input
@@ -121,9 +124,10 @@ export class TipCalculate extends Bill {
   calculateTip(bill, uTip, cTip, nPeople) {
     let tipRate;
     // Checking for custom tip or default tip options and assigning to tipRate
-    if (typeof uTip !== "object") {
+    if (typeof uTip !== "object" && uTip!==0) {
       tipRate = uTip;
-    } else {
+    } 
+    else {
       tipRate = cTip;
     }
     // console.log(`Tip Rate: ${tipRate}`);
@@ -132,7 +136,10 @@ export class TipCalculate extends Bill {
     tipAmtPerPerson = Math.round(tipAmtPerPerson * 100) / 100;
     // console.log(`Tip amount per person: ${tipAmtPerPerson}`);
     // Invoking Total Tip calculation method
-    this.calculateTotal(tipAmtPerPerson, bill, nPeople);
+      this.calculateTotal(tipAmtPerPerson, bill, nPeople);
+   
+ 
+   
   }
 
   // Total Tip based on number of person
@@ -140,13 +147,12 @@ export class TipCalculate extends Bill {
     // Calculation
     let totalAmtPerPerson = billUser / noPeople + tipPerPerson;
     totalAmtPerPerson = Math.round(totalAmtPerPerson * 100) / 100;
-
     // console.log(`Total Amount Per Person:${totalAmtPerPerson}`);
     // To display the tip amounts
-    this.displayShare(tipPerPerson, totalAmtPerPerson);
+      this.displayShare(tipPerPerson, totalAmtPerPerson,noPeople);
   }
 
-  displayShare = (tipAmtPerPerson = 0.0, totalAmtPerPerson = 0.0) => {
+  displayShare = (tipAmtPerPerson = 0.0, totalAmtPerPerson = 0.0,noPeople=0) => {
 
     if(isNaN(tipAmtPerPerson)&&isNaN(totalAmtPerPerson)){
       tipAmtPerPerson = 0.0;
@@ -154,7 +160,11 @@ export class TipCalculate extends Bill {
     }
     let tipAmount = document.getElementById("tip-amount");
     let tipTotal = document.getElementById("tip-total");
-    tipAmount.innerHTML = "$" + tipAmtPerPerson;
+    
+    tipAmount.innerHTML = "$" + tipAmtPerPerson
     tipTotal.innerHTML = "$" + totalAmtPerPerson;
+
+   
+ 
   };
 }

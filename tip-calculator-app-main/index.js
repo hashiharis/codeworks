@@ -1,11 +1,13 @@
 import { TipCalculate, Validate } from "./script.js";
 
+
 const bill = document.getElementById("bill-textBox");
 const userTip = document.querySelectorAll(".tip-btn");
 const customTip = document.getElementById("custom-tip");
 const noOfPeople = document.getElementById("people-textBox");
 const resetBtn=document.getElementById("submit-btn");
 
+// document.addEventListener('DOMContentLoaded',(event)=>{
 // Validating userbill onblur event
 bill.onblur = (event) => {
   let userBill = event.target.value;
@@ -40,13 +42,10 @@ noOfPeople.onkeyup = (event) => {
 
 // Instantiating user object using new operator
 const user = new Validate(bill, userTip, customTip, noOfPeople);
-// console.log(user);
-
 // Instantiating amount object using new operator
 const amount = new TipCalculate(bill, userTip, customTip, noOfPeople);
+amount.calculateTip(); 
 // Invoking the calculate tip and display tip functions
-amount.calculateTip();
-amount.displayShare();
 
 // Resetting all values on click of the reset button
 document.addEventListener('DOMContentLoaded',(event)=>{
@@ -55,21 +54,24 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         for (const field of resetFields) {
             field.value = "";
         }
-        amount.displayShare();
-// Clearing off the values in class properties
-        if(typeof user!=='undefined' && user.Validate){
-            user.bill=0;
-            user.userTip=0;
-            user.customTip=0;
-            user.noOfPeople=0;
-        }
+   
 
-        if(typeof amount!=='undefined' && amount.TipCalculate){
-            user.bill=0;
-            user.userTip=0;
-            user.customTip=0;
-            user.noOfPeople=0;
-        }
 
+// Clearing off the values in class properties 
+
+       user.userBill=0;
+       user.userTip=0;
+       user.customTip=customTip;
+       user.noOfPeople=noOfPeople;
+
+       user.tipCalculator.userBill=0;
+       user.tipCalculator.userTip=0;
+       user.tipCalculator.customTip=customTip;
+       user.tipCalculator.noOfPeople=noOfPeople;
+    
+       user.tipCalculator.displayShare();
+       
     }
+   
+
 });
