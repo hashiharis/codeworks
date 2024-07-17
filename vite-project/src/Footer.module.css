@@ -1,0 +1,17 @@
+.footerSection{
+ background-color: #161619;
+ display:flex;
+ justify-content: center;
+ /* align-content: space-between; */
+ gap:2em;
+ padding:1.57em;
+ 
+}
+
+i{
+    padding:0.5em;
+    background-color:#918E9B ;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+}

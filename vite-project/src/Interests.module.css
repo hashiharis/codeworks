@@ -1,0 +1,28 @@
+.interestsSection{
+    padding-block:0.2em;
+    background-color: #1A1B21;
+    padding-inline:2em;
+  }
+  #interestsHeader{
+      color:#F5F5F5;
+      font-weight: bold;
+      font-size: 1rem;
+  }
+  
+  .interestsSection p{
+    padding-top:1em;
+      font-size: 0.625rem;
+      color:#DCDCDC;
+      line-height: 1rem;
+      padding-bottom:3em;
+  }
+
+  
+@media (min-width:768px){
+    #interestsHeader{
+        font-size: 1.5rem;
+    }
+    .interestsSection p{
+        font-size: 0.8rem;
+    }
+}

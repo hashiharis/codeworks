@@ -1,0 +1,20 @@
+
+*,*::before,*::after{
+    box-sizing:border-box;
+    margin:0;
+}
+.container{
+    font-family: "Inter", sans-serif;
+    /* color:#FFFFFF; */
+    width:min(100%, 800px);
+
+}
+
+@media (min-width:768px){
+    .container{
+        margin:0 auto;
+        width:50%;
+        border-radius: 20px;
+        overflow:hidden;
+    }
+}

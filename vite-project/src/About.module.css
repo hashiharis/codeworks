@@ -1,0 +1,26 @@
+.aboutSection{
+    padding-block:2em;
+  background-color: #1A1B21;
+  padding-inline:2em;
+}
+#aboutHeader{
+    color:#F5F5F5;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.aboutSection p{
+    padding-top:1em;
+    font-size: 0.625rem;
+    color:#DCDCDC;
+    line-height: 1rem;
+}
+
+@media (min-width:768px){
+    #aboutHeader{
+        font-size: 1.5rem;
+    }
+    .aboutSection p{
+        font-size: 0.8rem;
+    }
+}

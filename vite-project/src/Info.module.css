@@ -1,0 +1,59 @@
+.profileimg{
+    margin:0;
+    padding:0;
+    background-color: #1A1B21;
+}
+.proImg{
+   width:100%;
+   margin-bottom: 1.5em;
+   min-height:50%;
+}
+.nameDetails, a{
+    text-align:center;
+    color:#FFFFFF;
+}
+.nameDetails>a{
+  font-size: 0.7rem;
+  font-weight: 100;
+}
+#role{
+    color:#F3BF99;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.contact{
+    display:flex;
+    justify-content: center;
+    gap:1em;
+}
+
+.buttons{
+    margin-block:1em;
+    padding-block:0.5em;
+    padding-inline:2em;
+    border-radius:5px;
+    border:none;
+    font-size: 0.8rem;
+    font-weight:600;
+}
+
+#btn1{
+    display: flex;
+    align-content: center;
+    gap:0.6em;
+    justify-content: center;
+    align-items: center;
+    background-color:#FFFFFF;
+}
+
+#btn2{
+    display: flex;
+    align-content: center;
+    gap:0.6em;
+    justify-content: center;
+    align-items: center;
+    background-color: #5093E2;
+    color:#FFFFFF;
+}
+
